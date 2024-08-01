@@ -1,5 +1,6 @@
 import 'dotenv/config'
 import express from 'express'
+import path from 'path'
 import cors from 'cors'
 import { ethers } from 'ethers'
 import { Session } from '@0xsequence/auth'
@@ -97,6 +98,8 @@ async function verifyJWT(token: string): Promise<jwt.JwtPayload> {
       res.status(401).json({ error: (error as Error).message || 'Invalid token' });
     }
   });
+
+  app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
