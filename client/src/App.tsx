@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import sequence from './SequenceEmbeddedWallet'
-import { useSessionHash } from './useSessionHash'
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import sequenceLogo from './assets/sequence-icon.svg'
 import {Button, Card} from '@0xsequence/design-system'

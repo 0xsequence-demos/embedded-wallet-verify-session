@@ -6,5 +6,8 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/verify-embedded-wallet-jwts/"
+  base: "",
+  server:{
+    port:4444
+  }
 });
