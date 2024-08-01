@@ -11,7 +11,7 @@ function Dapp() {
   const { sessionHash } = useSessionHash()
 
   return (
-		<GoogleOAuthProvider clientId="908369456253-9ki3cl7bauhhu61hgtb66c1ioo0u2n24.apps.googleusercontent.com" nonce={sessionHash} key={sessionHash}>
+		<GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || '970987756660-35a6tc48hvi8cev9cnknp0iugv9poa23.apps.googleusercontent.com'} nonce={sessionHash} key={sessionHash}>
 			<App />
 		</GoogleOAuthProvider>
   );
