@@ -1,4 +1,3 @@
-
 .play-image {
   margin-top: 13px;
   margin-left: -130px;
@@ -15,7 +14,6 @@
   transform: translateY(-50%); /* Adjust vertical centering */
 }
 
-
 .play-image-cancel {
   margin-top: 13px;
   margin-left: -90px;
@@ -24,7 +22,7 @@
   transform: translateY(-50%); /* Adjust vertical centering */
 }
 
-.play-image-cancel-open-wallet{
+.play-image-cancel-open-wallet {
   margin-top: 13px;
   margin-left: -80px;
   display: none; /* Initially hide the image */
@@ -81,13 +79,13 @@ span.mint-generation:hover + .play-image-mint {
 }
 
 .gmail-login,
-.apple-login{ 
+.apple-login {
   display: inline-block; /* Show the image on hover */
 
   /* position: relative; Ensure the parent container is positioned */
 }
 .play-image-gmail,
-.play-image-apple{
+.play-image-apple {
   display: inline-block; /* Show the image on hover */
 }
 
@@ -97,7 +95,7 @@ span.mint-generation:hover + .play-image-mint {
 }
 
 .content {
-  position:'relative'
+  position: "relative";
 }
 
 .login-container {
@@ -108,7 +106,7 @@ span.mint-generation:hover + .play-image-mint {
   align-items: center;
   text-align: center;
   color: white;
-  font-family: 'ChiKareGo2', monospace;
+  font-family: "ChiKareGo2", monospace;
   text-align: center;
 }
 
@@ -124,7 +122,8 @@ span.mint-generation:hover + .play-image-mint {
   padding: 10px; /* Adjust border width and color as needed */
 }
 
-.dashed-box-google, .dashed-box-apple {
+.dashed-box-google,
+.dashed-box-apple {
   margin: 10px;
   margin-top: 70px;
   width: 140px;
@@ -136,17 +135,17 @@ span.mint-generation:hover + .play-image-mint {
   cursor: pointer; /* Makes it clear these are clickable */
 }
 
-.react-apple-signin-auth-btn.react-apple-signin-auth-btn-dark{
+.react-apple-signin-auth-btn.react-apple-signin-auth-btn-dark {
   background: transparent;
-    width: 150px;
-    height: 50px;
-    position: absolute;
-    border: 0px;
-    color: transparent;
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  border: 0px;
+  color: transparent;
   outline: none; /* Removes the outline */
 }
 
-.react-apple-signin-auth-btn.react-apple-signin-auth-btn-dark:focus{
+.react-apple-signin-auth-btn.react-apple-signin-auth-btn-dark:focus {
   outline: none; /* Removes the outline */
 }
 

@@ -2,9 +2,6 @@ import 'dotenv/config'
 import express from 'express'
 import path from 'path'
 import cors from 'cors'
-import { ethers } from 'ethers'
-import { Session } from '@0xsequence/auth'
-import { findSupportedNetwork, NetworkConfig } from '@0xsequence/network'
 import jwt from 'jsonwebtoken';
 import jwksClient from 'jwks-rsa';
 import { promisify } from 'util';
@@ -34,7 +31,7 @@ const getSigningKey = promisify(client.getSigningKey);
 const EXPECTED_AUDIENCE = process.env.BUILDER_API_ID!;
 
 // Middleware to verify JWT
-async function verifyJWT(token: string): Promise<jwt.JwtPayload> {
+async function verifyJWT(token: string) {
     const decodedToken = jwt.decode(token, { complete: true });
     console.log(decodedToken)
     if (!decodedToken || typeof decodedToken === 'string') {
@@ -48,8 +45,12 @@ async function verifyJWT(token: string): Promise<jwt.JwtPayload> {
     const verified = jwt.verify(token, publicKey, {
       algorithms: ['RS256'], // Specify the expected algorithm
       audience: EXPECTED_AUDIENCE, // Verify the audience claim
-    }) as jwt.JwtPayload;
-  
+    });
+ 
+    if(typeof verified === 'string') {
+      throw new Error ("String case is not handled")
+    }
+    
     // Verify additional claims
     if (!verified.sub || typeof verified.sub !== 'string') {
       throw new Error('Invalid sub claim');

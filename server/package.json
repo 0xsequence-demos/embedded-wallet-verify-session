@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "./node_modules/.bin/ts-node server.ts"
+        "start": "./node_modules/.bin/ts-node server.ts",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
     },
     "keywords": [],
     "author": "",
