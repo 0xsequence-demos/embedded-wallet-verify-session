@@ -1,20 +1,8 @@
 import "dotenv/config";
-import express from "express";
-import path from "path";
-import cors from "cors";
 import jwt from "jsonwebtoken";
 import jwksClient from "jwks-rsa";
 import { promisify } from "util";
 
-const PORT = 3000;
-const app = express();
-
-const corsOptions = {
-  origin: "*",
-};
-
-app.use(express.json());
-app.use(cors(corsOptions));
 
 // Initialize the JWKS client
 const client = jwksClient({
@@ -27,7 +15,7 @@ const client = jwksClient({
 const getSigningKey = promisify(client.getSigningKey);
 
 // Should be equal to the audience claim in the JWT that you want to verify which will be of the form https://api.sequence.build/project/*projectID*
-const EXPECTED_AUDIENCE = process.env.BUILDER_API_ID!;
+const EXPECTED_AUDIENCE = 'https://api.sequence.build/project/13639';
 
 // Middleware to verify JWT
 async function verifyJWT(token: string) {
