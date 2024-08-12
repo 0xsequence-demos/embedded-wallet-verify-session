@@ -1,0 +1,17 @@
+diff --git a/.npmignore b/.npmignore
+deleted file mode 100644
+index 34e4f5c298de294fa5c1c1769b6489eb047bde9a..0000000000000000000000000000000000000000
+diff --git a/index.js b/index.js
+index 5462c1f830bdbe79bf2b1fcfd811cd9799b4dd11..5c4b3a963d2f2cf14e7077e92b1a55a0fc430be6 100644
+--- a/index.js
++++ b/index.js
+@@ -1,7 +1,7 @@
+ /*jshint node:true */
+ 'use strict';
+-var Buffer = require('buffer').Buffer; // browserify
+-var SlowBuffer = require('buffer').SlowBuffer;
++var Buffer = require('node:buffer').Buffer; // browserify
++var SlowBuffer = require('node:buffer').SlowBuffer;
+ 
+ module.exports = bufferEq;
+ 

@@ -8,6 +8,9 @@ patchedDependencies:
   brorand@1.1.0:
     hash: ldhziwyaxwo7hhg3zuhjyiwgeq
     path: patches/brorand@1.1.0.patch
+  buffer-equal-constant-time@1.0.1:
+    hash: tgf5chdtoqe5vnp23ykfxakcla
+    path: patches/buffer-equal-constant-time@1.0.1.patch
   jwa@1.4.1:
     hash: w6hwajhuxakilissaenhsjfq7a
     path: patches/jwa@1.4.1.patch
@@ -3494,9 +3497,10 @@ packages:
       update-browserslist-db: 1.1.0(browserslist@4.23.2)
     dev: true
 
-  /buffer-equal-constant-time@1.0.1:
+  /buffer-equal-constant-time@1.0.1(patch_hash=tgf5chdtoqe5vnp23ykfxakcla):
     resolution: {integrity: sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==}
     dev: false
+    patched: true
 
   /call-bind@1.0.7:
     resolution: {integrity: sha512-GHTSNSYICQ7scH7sZ+M2rFopRoLh8t2bLSW6BbgrtLsahOIB5iyAVJf9GjWK3cYTDaMj4XdBpM1cA6pIS0Kv2w==}
@@ -4299,7 +4303,7 @@ packages:
   /jwa@1.4.1(patch_hash=w6hwajhuxakilissaenhsjfq7a):
     resolution: {integrity: sha512-qiLX/xhEEFKUAJ6FiBMbes3w9ATzyk5W7Hvzpa/SLYdxNtng+gcurvrI7TbACjIXlsJyr05/S1oUhZrc63evQA==}
     dependencies:
-      buffer-equal-constant-time: 1.0.1
+      buffer-equal-constant-time: 1.0.1(patch_hash=tgf5chdtoqe5vnp23ykfxakcla)
       ecdsa-sig-formatter: 1.0.11
       safe-buffer: 5.2.1
     dev: false
