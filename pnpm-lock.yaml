@@ -11,6 +11,9 @@ patchedDependencies:
   jwa@1.4.1:
     hash: w6hwajhuxakilissaenhsjfq7a
     path: patches/jwa@1.4.1.patch
+  jwks-rsa@3.1.0:
+    hash: nwdviaszvccxpyvaqtn5fzjjpa
+    path: patches/jwks-rsa@3.1.0.patch
 
 dependencies:
   '@0xsequence/auth':
@@ -39,7 +42,7 @@ dependencies:
     version: github.com/jordanfinners/node-jsonwebtoken/bee08614289a56fe9b890aabfac71adf2cb61d0a
   jwks-rsa:
     specifier: ^3.1.0
-    version: 3.1.0
+    version: 3.1.0(patch_hash=nwdviaszvccxpyvaqtn5fzjjpa)
   patch-package:
     specifier: ^8.0.0
     version: 8.0.0
@@ -4299,7 +4302,7 @@ packages:
     dev: false
     patched: true
 
-  /jwks-rsa@3.1.0:
+  /jwks-rsa@3.1.0(patch_hash=nwdviaszvccxpyvaqtn5fzjjpa):
     resolution: {integrity: sha512-v7nqlfezb9YfHHzYII3ef2a2j1XnGeSE/bK3WfumaYCqONAIstJbrEGapz4kadScZzEt7zYCN7bucj8C0Mv/Rg==}
     engines: {node: '>=14'}
     dependencies:
@@ -4312,6 +4315,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
+    patched: true
 
   /jws@3.2.2:
     resolution: {integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==}
