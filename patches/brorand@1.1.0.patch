@@ -1,0 +1,13 @@
+diff --git a/index.js b/index.js
+index 9a0fff4d2eb9610545b2042a32bbf28ccf1643af..5ca0eb1371dead0d1c905d05c1d283c4ad7bbd64 100644
+--- a/index.js
++++ b/index.js
+@@ -53,7 +53,7 @@ if (typeof self === 'object') {
+ } else {
+   // Node.js or Web worker with no crypto support
+   try {
+-    var crypto = require('crypto');
++    var crypto = require('node:crypto');
+     if (typeof crypto.randomBytes !== 'function')
+       throw new Error('Not supported');
+ 

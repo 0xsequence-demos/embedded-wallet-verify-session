@@ -19,6 +19,7 @@
     "ethers": "5.7.2",
     "jsonwebtoken": "jordanfinners/node-jsonwebtoken#feature/node-prefix",
     "jwks-rsa": "^3.1.0",
+    "patch-package": "^8.0.0",
     "react": "^18.2.0",
     "react-apple-signin-auth": "^1.1.0",
     "react-dom": "^18.2.0"
@@ -43,5 +44,10 @@
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   },
-  "packageManager": "pnpm@8.15.4+sha1.c85a4305534f76d461407b59277b954bac97b5c4"
+  "packageManager": "pnpm@8.15.4+sha1.c85a4305534f76d461407b59277b954bac97b5c4",
+  "pnpm": {
+    "patchedDependencies": {
+      "brorand@1.1.0": "patches/brorand@1.1.0.patch"
+    }
+  }
 }
