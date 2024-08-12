@@ -1,3 +1,4 @@
+name = "embedded-wallet-verify-session"
 compatibility_flags = [ "nodejs_compat" ]
 node_compat = true
-pages_build_output_dir = 'dist'
+pages_build_output_dir = "dist"
