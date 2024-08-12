@@ -10,6 +10,16 @@ index 37387ff7d602a4987b8888eefc7735841ec480e1..7011a67221a4fddf0848c5c029039552
  
  function cacheWrapper(client, { cacheMaxEntries = 5, cacheMaxAge = 600000 }) {
    logger(`Configured caching of signing keys. Max: ${cacheMaxEntries} / Age: ${cacheMaxAge}`);
+diff --git a/src/wrappers/callbackSupport.js b/src/wrappers/callbackSupport.js
+index 3748476a5a91b8c47cccc907fbeaea2e8010e8b9..881680c34d04d8e8a43b36924d6997ac61d75304 100644
+--- a/src/wrappers/callbackSupport.js
++++ b/src/wrappers/callbackSupport.js
+@@ -1,4 +1,4 @@
+-const { callbackify } = require('util');
++const { callbackify } = require('node:util');
+ 
+ const callbackSupport = (client) => {
+   const getSigningKey = client.getSigningKey.bind(client);
 diff --git a/src/wrappers/request.js b/src/wrappers/request.js
 index b453c2be50f4f33c0a71fb26217fcdb9a9ab1201..e8d61345927718fa1da91c9bc1461c375fa53b53 100644
 --- a/src/wrappers/request.js
