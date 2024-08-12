@@ -1,7 +1,7 @@
 import "dotenv/config";
 import jwt from "jsonwebtoken";
 import jwksClient from "jwks-rsa";
-import { promisify } from "util";
+import { promisify } from "node:util";
 
 
 // Initialize the JWKS client
@@ -65,7 +65,7 @@ async function verifyJWT(token: string) {
 }
 
 
-export const onRequest: PagesFunction<Env> = async (context) => {
+export const onRequest: PagesFunction = async (context) => {
 
   const { sequenceToken } = context.req.body as { sequenceToken?: string };
 
