@@ -1,9 +1,9 @@
-import "dotenv/config";
-import express from "express";
-import path from "path";
-import cors from "cors";
-import jwt from "jsonwebtoken";
-import jwksClient from "jwks-rsa";
+require('dotenv').config();
+import * as express from "express";
+import * as path from "path";
+import * as cors from "cors";
+import * as jwt from "jsonwebtoken";
+import * as jwksClient from "jwks-rsa";
 import { promisify } from "util";
 
 const PORT = 3000;
@@ -42,6 +42,8 @@ async function verifyJWT(token: string) {
   const publicKey = (
     signingKey as jwksClient.CertSigningKey | jwksClient.RsaSigningKey
   ).getPublicKey();
+
+  console.log(EXPECTED_AUDIENCE);
 
   const verified = jwt.verify(token, publicKey, {
     algorithms: ["RS256"], // Specify the expected algorithm
