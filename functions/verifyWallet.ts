@@ -1,4 +1,3 @@
-import "dotenv/config";
 import jwt from "jsonwebtoken";
 import jwksClient from "jwks-rsa";
 import { promisify } from "node:util";
