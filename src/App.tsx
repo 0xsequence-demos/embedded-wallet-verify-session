@@ -34,7 +34,7 @@ function VerifyWallet({ wallet }: any) {
     try {
       const { idToken } = await sequence.getIdToken();
 
-      const response = await fetch("http://localhost:3000/verifyWallet", {
+      const response = await fetch("api/verify-wallet", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
