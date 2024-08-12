@@ -1,0 +1,57 @@
+diff --git a/lib/data-stream.js b/lib/data-stream.js
+index 3535d31d9fb315ab94cff7ce2e0dc7e220b283fa..0b4f165805fcf2662f7762da27cb33ef1756454e 100644
+--- a/lib/data-stream.js
++++ b/lib/data-stream.js
+@@ -1,7 +1,7 @@
+ /*global module, process*/
+ var Buffer = require('safe-buffer').Buffer;
+-var Stream = require('stream');
+-var util = require('util');
++var Stream = require('node:stream');
++var util = require('node:util');
+ 
+ function DataStream(data) {
+   this.buffer = null;
+diff --git a/lib/sign-stream.js b/lib/sign-stream.js
+index 6a7ee42f2632039611751c9202c9e5bd85daa063..cd637563f08e06a48e17ad24c9237ad2c6fec336 100644
+--- a/lib/sign-stream.js
++++ b/lib/sign-stream.js
+@@ -2,9 +2,9 @@
+ var Buffer = require('safe-buffer').Buffer;
+ var DataStream = require('./data-stream');
+ var jwa = require('jwa');
+-var Stream = require('stream');
++var Stream = require('node:stream');
+ var toString = require('./tostring');
+-var util = require('util');
++var util = require('node:util');
+ 
+ function base64url(string, encoding) {
+   return Buffer
+diff --git a/lib/tostring.js b/lib/tostring.js
+index f5a49a36548b1e299042c9e3d1cdd60c71d8ec0c..04a2b7aa6c6fe7cb011b910dee479845f9b454fc 100644
+--- a/lib/tostring.js
++++ b/lib/tostring.js
+@@ -1,5 +1,5 @@
+ /*global module*/
+-var Buffer = require('buffer').Buffer;
++var Buffer = require('node:buffer').Buffer;
+ 
+ module.exports = function toString(obj) {
+   if (typeof obj === 'string')
+diff --git a/lib/verify-stream.js b/lib/verify-stream.js
+index 39f7c73e2829091acfaef2e64f4194d73196625a..93f8f6cd971a6254313a820975a47ed4de9af77d 100644
+--- a/lib/verify-stream.js
++++ b/lib/verify-stream.js
+@@ -2,9 +2,9 @@
+ var Buffer = require('safe-buffer').Buffer;
+ var DataStream = require('./data-stream');
+ var jwa = require('jwa');
+-var Stream = require('stream');
++var Stream = require('node:stream');
+ var toString = require('./tostring');
+-var util = require('util');
++var util = require('node:util');
+ var JWS_REGEX = /^[a-zA-Z0-9\-_]+?\.[a-zA-Z0-9\-_]+?\.([a-zA-Z0-9\-_]+)?$/;
+ 
+ function isObject(thing) {

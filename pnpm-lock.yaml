@@ -14,6 +14,9 @@ patchedDependencies:
   jwks-rsa@3.1.0:
     hash: nwdviaszvccxpyvaqtn5fzjjpa
     path: patches/jwks-rsa@3.1.0.patch
+  jws@3.2.2:
+    hash: o3l7eidg3jiwixpzrwjt3xqlii
+    path: patches/jws@3.2.2.patch
 
 dependencies:
   '@0xsequence/auth':
@@ -4317,12 +4320,13 @@ packages:
     dev: false
     patched: true
 
-  /jws@3.2.2:
+  /jws@3.2.2(patch_hash=o3l7eidg3jiwixpzrwjt3xqlii):
     resolution: {integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==}
     dependencies:
       jwa: 1.4.1(patch_hash=w6hwajhuxakilissaenhsjfq7a)
       safe-buffer: 5.2.1
     dev: false
+    patched: true
 
   /jwt-decode@4.0.0:
     resolution: {integrity: sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==}
@@ -5155,7 +5159,7 @@ packages:
     version: 9.0.2
     engines: {node: '>=12', npm: '>=6'}
     dependencies:
-      jws: 3.2.2
+      jws: 3.2.2(patch_hash=o3l7eidg3jiwixpzrwjt3xqlii)
       lodash.includes: 4.3.0
       lodash.isboolean: 3.0.3
       lodash.isinteger: 4.0.4
