@@ -1,0 +1,26 @@
+diff --git a/lib/async.js b/lib/async.js
+index 2f93b30ef23ef6117021f78519921d4c802095ab..414b0992c7f315e9e85ae97ab0392f683f3ba721 100644
+--- a/lib/async.js
++++ b/lib/async.js
+@@ -36,7 +36,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.asyncMemoizer = void 0;
+ var lru_cache_1 = __importDefault(require("lru-cache"));
+-var events_1 = require("events");
++var events_1 = require("node:events");
+ var lodash_clonedeep_1 = __importDefault(require("lodash.clonedeep"));
+ var freeze_1 = require("./freeze");
+ var sync_1 = require("./sync");
+diff --git a/lib/sync.js b/lib/sync.js
+index e36c40d4d9c656bf1a9d96c966dc01477d66a0ef..f7df3e0b06016207d0eaf30295ded1eda47dd910 100644
+--- a/lib/sync.js
++++ b/lib/sync.js
+@@ -25,7 +25,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.syncMemoizer = void 0;
+ var lru_cache_1 = __importDefault(require("lru-cache"));
+-var events_1 = require("events");
++var events_1 = require("node:events");
+ var lodash_clonedeep_1 = __importDefault(require("lodash.clonedeep"));
+ var freeze_1 = require("./freeze");
+ function syncMemoizer(options) {
