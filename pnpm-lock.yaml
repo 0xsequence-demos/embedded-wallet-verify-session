@@ -8,6 +8,9 @@ patchedDependencies:
   brorand@1.1.0:
     hash: ldhziwyaxwo7hhg3zuhjyiwgeq
     path: patches/brorand@1.1.0.patch
+  jwa@1.4.1:
+    hash: w6hwajhuxakilissaenhsjfq7a
+    path: patches/jwa@1.4.1.patch
 
 dependencies:
   '@0xsequence/auth':
@@ -4287,13 +4290,14 @@ packages:
     resolution: {integrity: sha512-2/Ki0GcmuqSrgFyelQq9M05y7PS0mEwuIzrf3f1fPqkVDVRvZrPZtVSMHxdgo8Aq0sxAOb/cr2aqqA3LeWHVPg==}
     dev: false
 
-  /jwa@1.4.1:
+  /jwa@1.4.1(patch_hash=w6hwajhuxakilissaenhsjfq7a):
     resolution: {integrity: sha512-qiLX/xhEEFKUAJ6FiBMbes3w9ATzyk5W7Hvzpa/SLYdxNtng+gcurvrI7TbACjIXlsJyr05/S1oUhZrc63evQA==}
     dependencies:
       buffer-equal-constant-time: 1.0.1
       ecdsa-sig-formatter: 1.0.11
       safe-buffer: 5.2.1
     dev: false
+    patched: true
 
   /jwks-rsa@3.1.0:
     resolution: {integrity: sha512-v7nqlfezb9YfHHzYII3ef2a2j1XnGeSE/bK3WfumaYCqONAIstJbrEGapz4kadScZzEt7zYCN7bucj8C0Mv/Rg==}
@@ -4312,7 +4316,7 @@ packages:
   /jws@3.2.2:
     resolution: {integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==}
     dependencies:
-      jwa: 1.4.1
+      jwa: 1.4.1(patch_hash=w6hwajhuxakilissaenhsjfq7a)
       safe-buffer: 5.2.1
     dev: false
 
