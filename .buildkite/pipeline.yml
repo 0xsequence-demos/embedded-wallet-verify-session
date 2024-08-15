@@ -1,0 +1,17 @@
+agents:
+  queue: normal
+
+env:
+  IMAGE_REGISTRY_REPO_NAME: "us-docker.pkg.dev/horizon-games-ci/sequence/embedded-wallet-verify-session"
+
+steps:
+  - label: ":docker: Build Webapp"
+    key: "build-webapp"
+    commands:
+      - scripts/build.sh
+    retry:
+      automatic:
+        - exit_status: 137
+          limit: 3
+    env:
+      BUILDER_APP: client
