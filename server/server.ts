@@ -26,11 +26,12 @@ const client = jwksClient({
 // Promisify the getSigningKey function
 const getSigningKey = promisify(client.getSigningKey);
 
-// Should be equal to the audience claim in the JWT that you want to verify which will be of the form https://api.sequence.build/project/*projectID*
-const EXPECTED_AUDIENCE = `https://api.sequence.build/project/${process.env.PROJECT_ID}`;
+const EXPECTED_AUDIENCE = `https://sequence.build/project/` + process.env.BUILDER_PROJECT_ID
 
 // Middleware to verify JWT
 async function verifyJWT(token: string) {
+  // Should be equal to the audience claim in the JWT that you want to verify which will be of the form https://api.sequence.build/project/*projectID*
+
   const decodedToken = jwt.decode(token, { complete: true });
   console.log(decodedToken);
   if (!decodedToken || typeof decodedToken === "string") {
