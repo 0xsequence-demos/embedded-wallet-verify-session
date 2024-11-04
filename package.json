@@ -1,21 +1,46 @@
 {
-    "name": "verify-embedded-wallet-jwt",
-    "version": "1.0.0",
-    "description": "",
-    "scripts": {
-        "start:client": "cd client && pnpm install && pnpm run dev",
-        "start:server:dev": "cd server && pnpm install && node ./node_modules/.bin/nodemon server.ts",
-        "start:server": "cd server && pnpm install && node node_modules/ts-node/dist/bin server.ts",
-        "start": "concurrently \"pnpm run start:server\" \"pnpm run start:client\"",
-        "start:dev": "concurrently \"pnpm run start:server:dev\" \"pnpm run start:client\"",
-        "postinstall": "cd server && pnpm install && cd ../client && pnpm install"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "concurrently": "^8.2.2",
-        "ts-node": "^10.4.0"
-    },
-    "packageManager": "pnpm@8.15.4+sha1.c85a4305534f76d461407b59277b954bac97b5c4"
+  "name": "embedded-wallet-verify-session",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "echo \"Attention: front-end client and cloudflare function development use different tools. \n\nPlease be more specific: \n\npnpm run dev:vite \npnpm run dev:cf\"",
+    "dev:vite": "vite",
+    "dev:cf": "concurrently \"pnpm run dev:cf:functions\" \"pnpm run dev:cf:build\"",
+    "dev:cf:functions": "wrangler pages dev",
+    "dev:cf:build": "nodemon  --watch 'src/**/*' -e ts,tsx --exec \"pnpm run build\"",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && prettier --write --ignore-path .prettierignore .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@0xsequence/auth": "^1.9.30",
+    "@0xsequence/design-system": "^1.7.5",
+    "@0xsequence/network": "^1.9.30",
+    "@0xsequence/waas": "^1.10.3",
+    "@react-oauth/google": "^0.12.1",
+    "concurrently": "^9.0.1",
+    "ethers": "5.7.2",
+    "jose": "^5.9.6",
+    "react": "^18.2.0",
+    "react-apple-signin-auth": "^1.1.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240806.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "nodemon": "^3.1.3",
+    "prettier": "^3.3.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "wrangler": "^3.84.1"
+  },
+  "packageManager": "pnpm@8.15.4+sha1.c85a4305534f76d461407b59277b954bac97b5c4"
 }
