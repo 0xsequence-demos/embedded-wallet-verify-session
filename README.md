@@ -1,4 +1,4 @@
-# Sequence Kit Embedded Wallet JWT Verification
+# Sequence Embedded Wallet JWT Verification
 
 Starter Sequence Embedded Wallet boilerplate that shows how to verify a JWT from your backend.
 
