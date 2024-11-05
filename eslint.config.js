@@ -18,6 +18,9 @@ export default [
     },
     rules: {
       "react-refresh/only-export-components": "warn",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+      ...reactHooks.configs.recommended.rules,
     },
     settings: {
       react: {

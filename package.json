@@ -12,7 +12,8 @@
     "build": "tsc && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "(cp -n .env.example .env) || echo already exists"
   },
   "dependencies": {
     "@0xsequence/auth": "^2.0.22",
