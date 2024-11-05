@@ -1,4 +1,4 @@
-import sequence from "./SequenceEmbeddedWallet.ts";
+import sequence from "./sequence.ts";
 import { useEffect, useState } from "react";
 
 export function useSessionHash() {

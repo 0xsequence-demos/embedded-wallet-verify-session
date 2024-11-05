@@ -18,7 +18,6 @@ function getJwks() {
   return jwksPromise;
 }
 
-
 // Middleware to verify JWT
 async function verifyJWT(token: string, audience: string) {
   const jwks = await getJwks();
@@ -43,7 +42,10 @@ export const onRequest: PagesFunction<IEnv> = async (ctx) => {
   }
 
   try {
-    const verified = await verifyJWT(sequenceToken, `https://sequence.build/project/${ctx.env.BUILDER_PROJECT_ID}`);
+    const verified = await verifyJWT(
+      sequenceToken,
+      `https://sequence.build/project/${ctx.env.BUILDER_PROJECT_ID}`,
+    );
 
     const walletInfo = {
       walletAddress: verified.payload.sub,
