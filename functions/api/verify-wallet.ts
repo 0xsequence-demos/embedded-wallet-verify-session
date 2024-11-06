@@ -1,7 +1,7 @@
 import { decodeProtectedHeader, JWK, jwtVerify } from "jose";
 
 export interface IEnv {
-  EXPECTED_AUDIENCE: string;
+  BUILDER_PROJECT_ID: string;
 }
 interface Ijwks {
   keys: JWK[];
